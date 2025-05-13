@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+s2201238022 Dennis Hanrieder OMM UE7
+  
+Due do problems with mongodb i used mockdata instead. Can be found on /api  
 
-## Getting Started
+ChatGbt Prompt:  
 
-First, run the development server:
+  this is the url for my db lab7g1. i don't know which url i must use for a database connection
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+ChatGPT:
+Based on the screenshot you provided, it looks like your MongoDB server is running locally on port 9999, and you are accessing the lab7g1 database using Mongo Express.
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Correct MongoDB URI:
+Since your database is running locally on port 9999, the correct MongoDB connection string should be:
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+arduino
+Kopieren
+Bearbeiten
+mongodb://localhost:9999/
+However, in the Next.js API file (route.js), the URI is currently set as:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+cpp
+Kopieren
+Bearbeiten
+const DB_URI = "mongodb://mongo:27017/"
+How to Fix:
+Replace the existing URI with:
 
-## Learn More
+javascript
+Kopieren
+Bearbeiten
+const DB_URI = "mongodb://localhost:9999/";
+This change will ensure that your Next.js API can correctly connect to your MongoDB instance running on your local machine.
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Would you like me to modify the file for you and regenerate the API code?
